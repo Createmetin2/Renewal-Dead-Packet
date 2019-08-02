@@ -36,7 +36,7 @@ if app.RENEWAL_DEAD_PACKET:
 		def OnUpdate(self):
 			for x in xrange(player.REVIVE_TYPE_MAX): 
 				endtime = self.reviveTimeStamp[x] - app.GetTime()
-				if 0. < endtime <= .1:
+				if endtime < 0:
 					self.reviveTimeTexts[x].Hide()
 					if x == player.REVIVE_TYPE_HERE:
 						self.restartHereButton.Enable()
